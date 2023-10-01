@@ -28,11 +28,19 @@ local function onUnload()
 	sam.EM:UnregisterForEvent(sam.name.."zmajaSpawnAlert", EVENT_COMBAT_EVENT)
 	bossSpawned = false
 	kills = 0
+	sam.EM:UnregisterForEvent(sam.name.."zmajaSpawnAlertShade", EVENT_COMBAT_EVENT)
+	sam.EM:UnregisterForEvent(sam.name.."zmajaSpawnAlertJump", EVENT_COMBAT_EVENT)
 end
 
 local function onLoad()
 	sam.EM:RegisterForEvent(sam.name.."zmajaSpawnAlert", EVENT_COMBAT_EVENT, spawnAlert)
 	sam.EM:AddFilterForEvent(sam.name.."zmajaSpawnAlert", EVENT_COMBAT_EVENT, REGISTER_FILTER_COMBAT_RESULT, ACTION_RESULT_DIED)
+	
+	sam.EM:RegisterForEvent(sam.name.."zmajaSpawnAlertShade", EVENT_COMBAT_EVENT, function() SAMURAI.spawnTimer(7.55) end)
+	sam.EM:AddFilterForEvent(sam.name.."zmajaSpawnAlertShade", EVENT_COMBAT_EVENT, REGISTER_FILTER_ABILITY_ID, 106023)
+
+	sam.EM:RegisterForEvent(sam.name.."zmajaSpawnAlertJump", EVENT_COMBAT_EVENT, function() SAMURAI.spawnTimer(4) end)
+	sam.EM:AddFilterForEvent(sam.name.."zmajaSpawnAlertJump", EVENT_COMBAT_EVENT, REGISTER_FILTER_ABILITY_ID, 104555)
 end
 
 local function creeperTargetAlert()

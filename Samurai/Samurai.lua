@@ -122,40 +122,49 @@ function sam.fireInstanceCombatHandlers(e, inCombat)
 	end
 end
 
+sam.lineTable = {
+	["There! Somethings coming through! Another fabricant!"] = 7.2, -- 586
+	["Reprocessing yard contamination critical"] = 9.3, -- 586
+	["Aha! There's its cogitation array, in the distance%. Keep the body distracted while I unravel its mind"] = 7, -- 586
+	["Attack the secondary terminals!"] = 33, -- 586
+	["It's bypassing my alterations! Disrupt the secondary terminals now!"] = 33, -- 586
+	["The secondary terminals are attempting to compensate! Give them a whack!"] = 33, -- 586
+	["Don't .... It's ... trap%."] = 15.6, -- mol
+    ["Non... C'est... un piège%."] = 15.6, -- mol
+	["Have you not heard me%? Have I not"] = 24.4, -- mol
+    ["Vous ne m'avez pas entendu"] = 24.4, -- mol
+	["The Celestial Mage summons me to"] = 4.4,
+	["To restore the natural order%. To reclaim all that was and will be"] = 21.2,
+	["Feel that%? A chill breeze"] = 22.3,
+	["we kept it hidden from our brethren and buried them with our tears"] = 11,
+	["They shall not intrude much longer"] = 5,
+--	["What've we got here%? An audience%?"] = 21, -- 904
+	["Fresh challengers more like%."] = 16.8, -- 904
+	["Let me show you the power that's going to crush that little flotilla of yours%."] = 15.7, -- 904
+	["Who did this%? Where's At'avar%?"] = 12.6, -- 547
+	["Boss, I don't think he's listening%."] = 14.2, -- 547
+	["Ambush%. What a lovely idea%."] = 12.5, -- 547
+	["And so the final challenge begins%. Those who would represent me as champion now stand in this arena, deep within my realm%. Only those who remain standing will receive my highest honor%."] = 41, -- dsa
+--	["You know Hiath, so his presence here should come as no surprise%. Defeat him and become my new chosen%. Lose, and you will be lost and forgotten in the depths of my realm%."] = 19.6, -- dsa
+	["By Sovngarde%. Let's just focus on bashing in some heads, yah?"] = 17.1, -- 547
+	["Great Xalvakka drank deep from the souls we served her%. Soon, she arrives!"] = 7.7, -- rg
+	["Damn! They're here sooner than expected"] = 14.4, -- fl
+	["You're still here%? If you must admire my work, at least allow me to put my best fossil"] = 10.6, -- fl
+	["Not to be an ungracious host"] = 19.9, -- fl
+	["So many of the things you've broken I can easily replace"] = 16.8, -- fl
+	["At last I can unveil the centerpiece of my collection"] = 17.9, -- fl
+	["How dare you reject Lady Thorn's offer%? Look! Tremble before the power you might have wielded!"] = 9, -- ct
+	["Well done, Talfyg%. You brought me a daughter of Verandis, as requested%. She will complement our lord's army well%."] = 19.2, -- ct
+	["Where did he go%?"] = 8.5, -- mos
+	["Why do you still hesitate, Vanton%?"] = 6.4, -- se
+}
+
 local function bossLines(text)
 	if not sam.savedVars.bossTimers then return false end
-	local boss = false
-	local time = 0
-	if string.find(text, "Reprocessing yard contamination critical") then
-		boss = true
-		time = 9.3
-	elseif string.find(text, "Don't .... It's ... trap.") then
-		boss = true
-		time = 15.6
-	elseif string.find(text, "Have you not heard me%? Have I not") then
-		boss = true
-		time = 24.4
-	elseif string.find(text, "There! Somethings coming through! Another fabricant!") then
-		boss = true
-		time = 7.2
-	elseif string.find(text, "The Celestial Mage summons me to") then
-		boss = true
-		time = 4.4
-	elseif string.find(text, "To restore the natural order%. To reclaim all that was and will be") then
-		boss = true
-		time = 21.2
-	elseif string.find(text, "Feel that%? A chill breeze") then
-		boss = true
-		time = 22.3
-	elseif string.find(text, "we kept it hidden from our brethren and buried them with our tears") then
-		boss = true
-		time = 11
-	elseif string.find(text, "They shall not intrude much longer") then
-		boss = true
-		time = 5
-	end
-	if boss then
-		sam.spawnTimer(time)
+	for searchString, time in pairs(sam.lineTable) do
+		if string.find(text, searchString) then
+			sam.spawnTimer(time)
+		end
 	end
 end
 
