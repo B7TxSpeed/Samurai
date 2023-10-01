@@ -1,11 +1,14 @@
 ## Title: |cffd000Samur|r.|cffe675ai|r
 ## Description: stop dying 4head
-## Author: |cc2ff19Wheels|r, |cef42ffMormo|r, @Lord_Drad
-## Version: 2.15.0
-## APIVersion: 101037
+## Author: |cc2ff19Wheels|r, |cef42ffMormo|r, @Lord_Drad, |c00fffe@B7TxSpeed|r
+## Version: 2.16.0
+## APIVersion: 101039 101040
 ## SavedVariables: SamuraiSavedVars
 ## DependsOn: LibAddonMenu-2.0 LibUnits2
 ## OptionalDependsOn: Testify
+
+lang/en.lua
+lang/$(language).lua
 
 Samurai.lua
 

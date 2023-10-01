@@ -10,7 +10,7 @@ local function onLoad()
 	local key = sam.name.."ChimeraSpawnAlert"
 	EVENT_MANAGER:RegisterForEvent(key, EVENT_DISPLAY_ANNOUNCEMENT, function(_, title, description)
 		if title == "Gryphon asterism aligned. Control sequence complete." then
-			SAMURAI.spawnTimer(7.9)
+			sam.spawnTimer(7.9)
 		end
 	end)
 end

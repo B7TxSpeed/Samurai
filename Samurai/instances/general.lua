@@ -5,20 +5,20 @@ local EM = sam.EM
 
 local spawnTimerFrame = nil
 local spawnTimerTime = 0
-SAMURAI.spawnTimerText = "|c18ff08Boss:|r"
+sam.spawnTimerText = "|c18ff08Boss:|r"
 
 local function spawnCountDown()
 	spawnTimerTime = spawnTimerTime - 0.1
 	if spawnTimerTime < 0 then
 		EM:UnregisterForUpdate(sam.name.."BossSpawn")
 		spawnTimerTime = 0
-		sam.UI.displayAlert(spawnTimerFrame, string.format("%s %.1f", SAMURAI.spawnTimerText, spawnTimerTime))
+		sam.UI.displayAlert(spawnTimerFrame, string.format("%s %.1f", sam.spawnTimerText, spawnTimerTime))
 		--zo_callLater(function() sam.UI.hideAlert(spawnTimerFrame) end, 500)
 		sam.UI.hideAlert(spawnTimerFrame)
 		spawnTimerFrame = nil
-		SAMURAI.spawnTimerText = "|c18ff08Boss:|r"
+		sam.spawnTimerText = "|c18ff08Boss:|r"
 	else
-		sam.UI.displayAlert(spawnTimerFrame, string.format("%s %.1f", SAMURAI.spawnTimerText, spawnTimerTime))
+		sam.UI.displayAlert(spawnTimerFrame, string.format("%s %.1f", sam.spawnTimerText, spawnTimerTime))
 	end
 end
 

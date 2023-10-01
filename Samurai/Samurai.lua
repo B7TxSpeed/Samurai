@@ -123,18 +123,19 @@ function sam.fireInstanceCombatHandlers(e, inCombat)
 end
 
 sam.lineTable = {
-	["There! Somethings coming through! Another fabricant!"] = 7.2, -- 586
-	["Reprocessing yard contamination critical"] = 9.3, -- 586
-	["Aha! There's its cogitation array, in the distance%. Keep the body distracted while I unravel its mind"] = 7, -- 586
-	["Attack the secondary terminals!"] = 33, -- 586
-	["It's bypassing my alterations! Disrupt the secondary terminals now!"] = 33, -- 586
-	["The secondary terminals are attempting to compensate! Give them a whack!"] = 33, -- 586
-	["Don't .... It's ... trap%."] = 15.6, -- mol
-    ["Non... C'est... un piège%."] = 15.6, -- mol
-	["Have you not heard me%? Have I not"] = 24.4, -- mol
-    ["Vous ne m'avez pas entendu"] = 24.4, -- mol
-	["The Celestial Mage summons me to"] = 4.4,
-	["To restore the natural order%. To reclaim all that was and will be"] = 21.2,
+	[GetString(SAM_HOF_FACTOTUM)] = 7.2, -- HOF - Pinnacle Factotum
+	[GetString(SAM_HOF_COMMITEE)] = 9.3, -- HOF - Reassembly Commite
+	[GetString(SAM_HOF_AG_SPAWN)] = 7, -- HOF - Assembly General Spawn
+	[GetString(SAM_HOF_AG_P1)] = 33, -- HOF - Assembly General Recharge Phase 1
+	[GetString(SAM_HOF_AG_P2)] = 33, -- HOF - Assembly General Recharge Phase 2
+	[GetString(SAM_HOF_AG_P3)] = 33, -- HOF - Assembly General Recharge Phase 3
+	[GetString(SAM_MOL_ZHAJHASSA)] = 15.6, -- MOL - Zhaj'hassa
+	[GetString(SAM_MOL_RAKKHAT)] = 24.4, -- MOL - Rakkhat
+	[GetString(SAM_AA_VARLARIEL)] = 4.4, -- AA - Varlariel
+	[GetString(SAM_SS_NAHVIINTAAS)] = 21.2, -- SS - Nahviintaas
+	[GetString(SAM_KA_FALGRAVN)] = 9, -- KA - Falgravn
+	[GetString(SAM_DSR_TALERIA)] = 24, -- DSR - Taleria
+	[GetString(SAM_SE_TWELVANE)] = 6.4, -- SE - Archwizard Twelvane
 	["Feel that%? A chill breeze"] = 22.3,
 	["we kept it hidden from our brethren and buried them with our tears"] = 11,
 	["They shall not intrude much longer"] = 5,
@@ -156,7 +157,6 @@ sam.lineTable = {
 	["How dare you reject Lady Thorn's offer%? Look! Tremble before the power you might have wielded!"] = 9, -- ct
 	["Well done, Talfyg%. You brought me a daughter of Verandis, as requested%. She will complement our lord's army well%."] = 19.2, -- ct
 	["Where did he go%?"] = 8.5, -- mos
-	["Why do you still hesitate, Vanton%?"] = 6.4, -- se
 }
 
 local function bossLines(text)
@@ -164,6 +164,7 @@ local function bossLines(text)
 	for searchString, time in pairs(sam.lineTable) do
 		if string.find(text, searchString) then
 			sam.spawnTimer(time)
+			break
 		end
 	end
 end
