@@ -123,9 +123,9 @@ function sam.fireInstanceCombatHandlers(e, inCombat)
 end
 
 sam.lineTable = {
-	[GetString(SAM_HOF_FACTOTUM)] = 7.2, -- HOF - Pinnacle Factotum
-	[GetString(SAM_HOF_COMMITEE)] = 9.3, -- HOF - Reassembly Commite
-	[GetString(SAM_HOF_AG_SPAWN)] = 7, -- HOF - Assembly General Spawn
+	[GetString(SAM_HOF_FACTOTUM)] = 16, -- HOF - Pinnacle Factotum
+	[GetString(SAM_HOF_COMMITEE)] = 17, -- HOF - Reassembly Commite
+	[GetString(SAM_HOF_AG_SPAWN)] = 26, -- HOF - Assembly General Spawn
 	[GetString(SAM_HOF_AG_P1)] = 33, -- HOF - Assembly General Recharge Phase 1
 	[GetString(SAM_HOF_AG_P2)] = 33, -- HOF - Assembly General Recharge Phase 2
 	[GetString(SAM_HOF_AG_P3)] = 33, -- HOF - Assembly General Recharge Phase 3

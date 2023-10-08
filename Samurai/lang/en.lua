@@ -1,7 +1,7 @@
 local bossLines = {
-    SAM_HOF_FACTOTUM = "There! Somethings coming through! Another fabricant!",
-    SAM_HOF_COMMITEE = "Reprocessing yard contamination critical",
-    SAM_HOF_AG_SPAWN = "Aha! There's its cogitation array, in the distance%. Keep the body distracted while I unravel its mind",
+    SAM_HOF_FACTOTUM = "Interesting%. These devices have all reset themselves%. I didn't do that%.",
+    SAM_HOF_COMMITEE = "Ah! There you are, finally!",
+    SAM_HOF_AG_SPAWN = "Now that's the second largest construct I've ever seen%.",
     SAM_HOF_AG_P1 = "Attack the secondary terminals!",
     SAM_HOF_AG_P2 = "It's bypassing my alterations! Disrupt the secondary terminals now!",
     SAM_HOF_AG_P3 = "The secondary terminals are attempting to compensate! Give them a whack!",
